@@ -72,13 +72,13 @@ class MyWidget extends StatelessWidget{
         'Прив',
         descriptionText: 'ahahahahah',
         icon: Icons.hail,
-        imageUrl: 'https://cdn.trinixy.ru/pics3/20080128/racoon_24.jpg',
+        imageUrl: 'https://cdn.trinixy.ru/pics3/20080128/racoon_06.jpg',
       ),
       _CardData(
         'Ох',
         descriptionText: 'lol',
         icon: Icons.warning_amber,
-        imageUrl: 'https://cdn.trinixy.ru/pics3/20080128/racoon_31.jpg',
+        imageUrl: 'https://cdn.trinixy.ru/pics3/20080128/racoon_24.jpg',
       ),
     ];
     return Center(
@@ -126,7 +126,7 @@ class _CardState extends State<_Card> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(16),
-      padding: const EdgeInsets.all(16),
+//      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white70,
         borderRadius: BorderRadius.circular(20),
@@ -145,13 +145,13 @@ class _CardState extends State<_Card> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(20),
               topLeft: Radius.circular(20),
             ),
             child: SizedBox(
               height: double.infinity,
-              width: 200,
+              width: 120,
               child: Image.network(
                 widget.imageUrl ?? '',
                 fit: BoxFit.cover,
@@ -161,7 +161,7 @@ class _CardState extends State<_Card> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 8.0),
+              padding: const EdgeInsets.only(left: 16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -170,7 +170,7 @@ class _CardState extends State<_Card> {
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
                   Text(
-                    widget.descriptionText * 70,
+                    widget.descriptionText * 20,
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ],
